@@ -1,0 +1,15 @@
+event_type,count
+age_changed,1
+building_created,47
+construction_abandoned,255
+construction_expired,73
+hunt_completed,22
+resource_changed,1650
+simulation_started,1
+social_interaction,1228
+villager_activity_changed,10885
+villager_ate,475
+villager_created,15
+villager_drank,606
+villager_need_changed,3136
+world_snapshot,1246

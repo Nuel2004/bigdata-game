@@ -1,0 +1,72 @@
+[
+  {
+    "constructed_buildings": 0,
+    "day": 0,
+    "event_index": 37,
+    "food_stock": 4,
+    "gold_stock": 0,
+    "population": 4,
+    "run_id": "20261013_162358_633278004429261811_49f7a11177cd4718b5a0c7e62dd03ab1",
+    "schema_version": 2,
+    "seed": "633278004429261811",
+    "tick": 600,
+    "type": "world_snapshot",
+    "wood_stock": 15
+  },
+  {
+    "constructed_buildings": 0,
+    "day": 0,
+    "event_index": 54,
+    "food_stock": 4,
+    "gold_stock": 0,
+    "population": 4,
+    "run_id": "20261013_162358_633278004429261811_49f7a11177cd4718b5a0c7e62dd03ab1",
+    "schema_version": 2,
+    "seed": "633278004429261811",
+    "tick": 1200,
+    "type": "world_snapshot",
+    "wood_stock": 20
+  },
+  {
+    "constructed_buildings": 0,
+    "day": 0,
+    "event_index": 77,
+    "food_stock": 8,
+    "gold_stock": 0,
+    "population": 4,
+    "run_id": "20261013_162358_633278004429261811_49f7a11177cd4718b5a0c7e62dd03ab1",
+    "schema_version": 2,
+    "seed": "633278004429261811",
+    "tick": 1800,
+    "type": "world_snapshot",
+    "wood_stock": 5
+  },
+  {
+    "constructed_buildings": 1,
+    "day": 0,
+    "event_index": 100,
+    "food_stock": 8,
+    "gold_stock": 0,
+    "population": 4,
+    "run_id": "20261013_162358_633278004429261811_49f7a11177cd4718b5a0c7e62dd03ab1",
+    "schema_version": 2,
+    "seed": "633278004429261811",
+    "tick": 2400,
+    "type": "world_snapshot",
+    "wood_stock": 10
+  },
+  {
+    "constructed_buildings": 1,
+    "day": 0,
+    "event_index": 117,
+    "food_stock": 12,
+    "gold_stock": 0,
+    "population": 4,
+    "run_id": "20261013_162358_633278004429261811_49f7a11177cd4718b5a0c7e62dd03ab1",
+    "schema_version": 2,
+    "seed": "633278004429261811",
+    "tick": 3000,
+    "type": "world_snapshot",
+    "wood_stock": 15
+  }
+]
