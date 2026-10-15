@@ -10,14 +10,13 @@ from pathlib import Path
 
 #Pandas se utiliza para trabajar con datos en forma de tablas mediante objetos llamados DataFrame
 import pandas as pd
+from radiografia import ROOT, DATASET, cargar_y_validar
+from parte_caza import extraer_tablas, crear_ficha
 
 #Aquí guardamos en la variable DATASET la ruta del archivo que vamos a analizar.
-DATASET = Path(
-    'data/raw/nevworld_633278004429261811_20261013_162358.jsonl'
-)
 
 #Aquí definimos otra ruta:
-OUTPUT_DIR = Path('data/processed')
+OUTPUT_DIR = ROOT / 'data/processed'
 
 #Esta línea crea la carpeta: data/processed si todavía no existe.
 # parents=True -> crea también las carpetas superiores si hacen falta.
@@ -27,7 +26,7 @@ OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
 # Pandas lee el archivo JSONL y lo convierte en un DataFrame.
 # lines=True -> indica que cada línea del archivo es un JSON independiente.
-df = pd.read_json(DATASET, lines=True)
+df = cargar_y_validar(DATASET)
 
 
 def event_table(event_type, columns):
@@ -99,6 +98,10 @@ tables = {
     ]),
 }
 
+# Fase02: extraer y validar cacerías e incidencias antes de exportar.
+fase02_tables = extraer_tablas(df)
+tables.update(fase02_tables)
+
 # Lo siguiente es una prueba para ver si los datos son correctos
 resources = tables['resources']
 
@@ -109,6 +112,8 @@ if not resources.empty:
         + resources['amount_delta']
         == resources['amount_after']
     )
+    if not valid.all():
+        raise ValueError('Hay cambios de recursos incoherentes')
     # valid.all() si todo es true
     # comprueba que todas las filas cumplan la fórmula before + delta = after. Si alguna no la cumple, detén el programa mostrando el mensaje "Hay cambios de recursos incoherentes".
 
@@ -130,3 +135,8 @@ for name, table in tables.items():
 
     # Muestra por pantalla el nombre de la tabla y cuántas filas tiene.
     print(name, '->', len(table), 'filas')
+
+ficha = ROOT / 'fase02/ficha.md'
+ficha.parent.mkdir(parents=True, exist_ok=True)
+ficha.write_text(crear_ficha(df, fase02_tables, DATASET), encoding='utf-8')
+print('Ficha generada:', ficha)
