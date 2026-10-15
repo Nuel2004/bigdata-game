@@ -1,0 +1,42 @@
+# Entornos virtuales (incluye versiones y copias de seguridad)
+.venv*/
+venv/
+env/
+
+# Python: bytecode y cachés
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.cache/
+
+# Jupyter: puntos de control y archivos de sesión
+.ipynb_checkpoints/
+.ipython/
+.jupyter/
+
+# Configuración local y credenciales
+.env
+.env.*
+!.env.example
+!.env.template
+.vscode/
+.idea/
+
+# Empaquetado y cobertura
+build/
+dist/
+*.egg-info/
+.coverage
+.coverage.*
+htmlcov/
+
+# Archivos temporales del sistema y editores
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.tmp
+*.swp
+*.swo
+*~
