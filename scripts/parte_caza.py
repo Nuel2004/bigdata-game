@@ -96,7 +96,7 @@ Dos registros con las mismas coordenadas no demuestran que sean la misma obra:
 el lugar puede reutilizarse. El tipo de evento tampoco explica por sí solo la causa detallada.
 
 Adaptado de [fase02 de Elias-MN/NevWorld](https://github.com/Elias-MN/NevWorld/tree/main/fase02).
-Regenerar con `python fase02/02_parte_caza.py`.
+Regenerar con `python scripts/actividades/02_parte_caza.py`.
 '''
 
 
@@ -115,7 +115,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--dataset', type=Path, default=DATASET)
     parser.add_argument('--output-dir', type=Path, default=ROOT / 'data/processed')
-    parser.add_argument('--ficha', type=Path, default=ROOT / 'fase02/ficha.md')
+    parser.add_argument('--ficha', type=Path, default=ROOT / 'reports/ficha_parte_caza.md')
     args = parser.parse_args()
     df = cargar_y_validar(args.dataset)
     tables = extraer_tablas(df)

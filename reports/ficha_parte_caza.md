@@ -44,4 +44,20 @@ Dos registros con las mismas coordenadas no demuestran que sean la misma obra:
 el lugar puede reutilizarse. El tipo de evento tampoco explica por sí solo la causa detallada.
 
 Adaptado de [fase02 de Elias-MN/NevWorld](https://github.com/Elias-MN/NevWorld/tree/main/fase02).
-Regenerar con `python fase02/02_parte_caza.py`.
+Regenerar con `python scripts/actividades/02_parte_caza.py`.
+
+## Contraste con dos líneas originales
+
+Evento 109: aldeano, presa y tick coinciden con el CSV.
+
+```json
+{"schema_version":2,"run_id":"20261013_162358_633278004429261811_49f7a11177cd4718b5a0c7e62dd03ab1","seed":"633278004429261811","event_index":109,"tick":2850,"type":"hunt_completed","villager_id":1639,"prey_type":"deer"}
+```
+
+Evento 177: aldeano, presa y tick coinciden con el CSV.
+
+```json
+{"schema_version":2,"run_id":"20261013_162358_633278004429261811_49f7a11177cd4718b5a0c7e62dd03ab1","seed":"633278004429261811","event_index":177,"tick":5510,"type":"hunt_completed","villager_id":1639,"prey_type":"sheep"}
+```
+
+Comprobaciones con assert: recuentos, claves únicas, campos obligatorios, día y contraste del CSV: OK.

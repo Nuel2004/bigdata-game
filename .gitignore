@@ -40,3 +40,6 @@ Desktop.ini
 *.swp
 *.swo
 *~
+
+# Apuntes y explicaciones personales
+/apuntes/

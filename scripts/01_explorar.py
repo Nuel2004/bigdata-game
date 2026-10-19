@@ -1,4 +1,4 @@
-"""Explora y valida el JSONL y actualiza fase01/ficha.md."""
+"""Explora y valida el JSONL y actualiza reports/ficha_radiografia.md."""
 from radiografia import main
 
 if __name__ == '__main__':

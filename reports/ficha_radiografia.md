@@ -35,4 +35,4 @@ de ticks. Un análisis posterior puede estudiar cómo evoluciona la población
 y si sus cambios coinciden con variaciones en las reservas de comida.
 
 Adaptado de [fase01 de Elias-MN/NevWorld](https://github.com/Elias-MN/NevWorld/tree/main/fase01).
-Regenerar con `python fase01/01_radiografia.py`.
+Regenerar con `python scripts/actividades/01_radiografia.py`.

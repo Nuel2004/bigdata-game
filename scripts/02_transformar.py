@@ -136,7 +136,7 @@ for name, table in tables.items():
     # Muestra por pantalla el nombre de la tabla y cuántas filas tiene.
     print(name, '->', len(table), 'filas')
 
-ficha = ROOT / 'fase02/ficha.md'
+ficha = ROOT / 'reports/ficha_parte_caza.md'
 ficha.parent.mkdir(parents=True, exist_ok=True)
 ficha.write_text(crear_ficha(df, fase02_tables, DATASET), encoding='utf-8')
 print('Ficha generada:', ficha)

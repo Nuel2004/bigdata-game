@@ -71,19 +71,34 @@ de ticks. Un análisis posterior puede estudiar cómo evoluciona la población
 y si sus cambios coinciden con variaciones en las reservas de comida.
 
 Adaptado de [fase01 de Elias-MN/NevWorld](https://github.com/Elias-MN/NevWorld/tree/main/fase01).
-Regenerar con `python fase01/01_radiografia.py`.
+Regenerar con `python scripts/actividades/01_radiografia.py`.
 '''
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--dataset', type=Path, default=DATASET)
-    parser.add_argument('--ficha', type=Path, default=ROOT / 'fase01/ficha.md')
+    parser.add_argument('--ficha', type=Path, default=ROOT / 'reports/ficha_radiografia.md')
     args = parser.parse_args()
     df = cargar_y_validar(args.dataset)
     ficha = crear_ficha(df, args.dataset)
     print('VALIDACIÓN BÁSICA: OK')
     print('\nPRIMEROS EVENTOS\n', df.head())
+    # Inspección del tema: validar antes de consultar posiciones con iloc.
+    filas, columnas = df.shape
+    print('\nTAMAÑO')
+    print('Eventos:', filas)
+    print('Columnas:', columnas)
+    print('\nNOMBRES DE COLUMNA')
+    print(df.columns.tolist())
+    print('\nEVENTOS POR TIPO')
+    print(df['type'].value_counts())
+    print('\nSESIÓN')
+    print('run_id:', df['run_id'].iloc[0])
+    print('semilla:', df['seed'].iloc[0] if 'seed' in df.columns else 'No disponible')
+    print('esquema:', df['schema_version'].iloc[0] if 'schema_version' in df.columns else 'No disponible')
+    print('primer tick:', df['tick'].min())
+    print('último tick:', df['tick'].max())
     print('\n', ficha)
     args.ficha.parent.mkdir(parents=True, exist_ok=True)
     args.ficha.write_text(ficha, encoding='utf-8')

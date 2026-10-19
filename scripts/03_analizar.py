@@ -47,11 +47,15 @@ def calcular_metricas(tables):
 
     # Los porcentajes usan solo registros con actividad informada, no tiempo.
     activity_counts = activities['activity'].value_counts()
-    activity_percent = (activities['activity'].value_counts(normalize=True) * 100).round(1)
+    activity_proportions = activities['activity'].value_counts(normalize=True)
+    activity_percent = (activity_proportions * 100).round(1)
     activity_report = pd.DataFrame({'count': activity_counts, 'percent': activity_percent})
 
     # El balance neto no equivale a las existencias finales.
-    resource_balance = resources.groupby('resource_type')['amount_delta'].sum().sort_values(ascending=False)
+    resource_groups = resources.groupby('resource_type')
+    delta_groups = resource_groups['amount_delta']
+    resource_balance = delta_groups.sum()
+    resource_balance = resource_balance.sort_values(ascending=False)
     gains = resources[resources['amount_delta'] > 0]
     spending = resources[resources['amount_delta'] < 0].copy()
     spending['amount_delta'] = spending['amount_delta'].abs()
