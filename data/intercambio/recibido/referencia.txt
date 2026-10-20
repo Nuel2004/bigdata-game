@@ -1,0 +1,2 @@
+partida_A.jsonl 1800274 f5b5e5befda3e2eec63cb2309a0d8247d95d61ecbe753cfd81f85a813efa137d
+partida_B.jsonl 1800274 f5b5e5befda3e2eec63cb2309a0d8247d95d61ecbe753cfd81f85a813efa137d
